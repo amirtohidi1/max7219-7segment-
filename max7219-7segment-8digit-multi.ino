@@ -1,10 +1,16 @@
+/**
+ * Amir Tohidi - @amirtohidi1
+ */
 
-int MAX7219_DIN[] = { 23 , 25 , 27 , 29,43};
-int MAX7219_CS[]  = {31, 33 , 35, 37,41};
-int MAX7219_CLK[] = {22, 22, 22, 39,45};
+ //                 majol1  majol2  majol3  majol4  majol5
+int MAX7219_DIN[] = { 23   , 25    , 27    , 29    , 43};
+int MAX7219_CS[]  = { 31   , 33    , 35    , 37    , 41};
+int MAX7219_CLK[] = { 22   , 22    , 22    , 39    , 45};
 
+//Set HexNumber 
 byte xx[] = {0x00 , 0x01 , 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09};
 
+//Default Char
 char te[5][8] = {
   {'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'},
   {'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'},
@@ -13,7 +19,9 @@ char te[5][8] = {
   {'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'}
 };
 
+// Number of Majol
 int tedad = 5;
+
 void initialise()
 {
   for (int i = 0 ; i < tedad ; i++)
@@ -26,8 +34,6 @@ void initialise()
     pinMode(MAX7219_CS[i], OUTPUT);
     pinMode(MAX7219_CLK[i], OUTPUT);
   }
-
-  
 
   for (int i = 0 ; i < tedad ; i++)
   {
